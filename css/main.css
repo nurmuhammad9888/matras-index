@@ -1371,6 +1371,9 @@ body{
     max-width: 625px;
     height: 401px;
 }
+.admin-link{
+    color: red;
+}
 
 @media screen and (min-width:768px){
     .logo{
