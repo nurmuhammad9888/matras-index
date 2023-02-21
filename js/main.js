@@ -113,7 +113,7 @@ elDecBtnModal.addEventListener("click", () => {
 //  statistics GET
 // async function getStatistics(){
 //     try {
-//         const res = await fetch("http://localhost:1212/api/statistics")
+//         const res = await fetch("https://matras-store.onrender.com/api/statistics")
 //         const data = await res.json()
 //         console.log(data);
 //         elStatisticsYearExperience.textContent = data.experience || "";
@@ -160,7 +160,7 @@ elConnectionForm.addEventListener("submit", evt => {
 
 async function userNumberPost(item) {
     try {
-        const res = await fetch("http://localhost:1212/api/contact", {
+        const res = await fetch("https://matras-store.onrender.com/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -185,7 +185,7 @@ async function userNumberPost(item) {
 // CARUSEL GET
 async function getCarusel() {
     try {
-        const res = await fetch("http://localhost:1212/api/carousel")
+        const res = await fetch("https://matras-store.onrender.com/api/carousel")
         const data = await res.json()
         heroGetFunc(data)
         caruselFunc()
@@ -202,7 +202,7 @@ function heroGetFunc(item) {
         const cloneHeroTemplate = elheroTemplate.cloneNode(true);
         cloneHeroTemplate.querySelector(".hero__title").textContent = el.title
         const img = el.image.replaceAll("[", "").replaceAll("]", "").replaceAll('"', "").split(",")[0];
-        cloneHeroTemplate.querySelector(".hero__img-img").src = `http://localhost:1212/carousel/${img}`
+        cloneHeroTemplate.querySelector(".hero__img-img").src = `https://matras-store.onrender.com/carousel/${img}`
         elFragment.appendChild(cloneHeroTemplate)
     })
     elHeroList.appendChild(elFragment)
@@ -211,7 +211,7 @@ function heroGetFunc(item) {
 // CATEGORY GET
 async function getCategory() {
     try {
-        const res = await fetch('http://localhost:1212/api/products')
+        const res = await fetch('https://matras-store.onrender.com/api/products')
         const data = await res.json()
         console.log(data);
         categoryGetFunc(data.categories)
@@ -259,7 +259,7 @@ elCategoryList.addEventListener("click", evt => {
 // PRODUCTS GET 
 async function getProducts(id) {
     try {
-        const res = await fetch('http://localhost:1212/api/products')
+        const res = await fetch('https://matras-store.onrender.com/api/products')
         const data = await res.json()
         console.log(data);
         getProductsFunc(data.products, id)
@@ -313,9 +313,9 @@ function getProductsFunc(item, id = "-1") {
             cloneProductssaleTemplate.querySelector(".products__item-box-img-img003").dataset.fancybox = el.category_id;
             cloneProductssaleTemplate.querySelector(".products__item-box-ig-zoom-btn").setAttribute("data-fancybox-trigger", el.id);
 
-            cloneProductssaleTemplate.querySelector(".products__item-box-img-img001").src = `http://localhost:1212/products/${img}`;
-            cloneProductssaleTemplate.querySelector(".products__item-box-img-img002").src = `http://localhost:1212/products/${img01}`;
-            cloneProductssaleTemplate.querySelector(".products__item-box-img-img003").src = `http://localhost:1212/products/${img02}`;
+            cloneProductssaleTemplate.querySelector(".products__item-box-img-img001").src = `https://matras-store.onrender.com/products/${img}`;
+            cloneProductssaleTemplate.querySelector(".products__item-box-img-img002").src = `https://matras-store.onrender.com/products/${img01}`;
+            cloneProductssaleTemplate.querySelector(".products__item-box-img-img003").src = `https://matras-store.onrender.com/products/${img02}`;
             cloneProductssaleTemplate.querySelector(".products__item-content-info-box-price").textContent = el.cost;
             elFragment.appendChild(cloneProductssaleTemplate);
             elProductssaleList.appendChild(elFragment)
@@ -346,14 +346,14 @@ function getProductsFunc(item, id = "-1") {
             const img = item.product_images.replaceAll("[", "").replaceAll("]", "").replaceAll('"', "").split(",")[0];
             const img01 = item.product_images.replaceAll("[", "").replaceAll("]", "").replaceAll('"', "").split(",")[1];
             const img02 = item.product_images.replaceAll("[", "").replaceAll("]", "").replaceAll('"', "").split(",")[2];
-            cloneProductsTemplate.querySelector(".products__item-box-img-img").src = `http://localhost:1212/products/${img}`;
+            cloneProductsTemplate.querySelector(".products__item-box-img-img").src = `https://matras-store.onrender.com/products/${img}`;
             cloneProductsTemplate.querySelector(".products__item-box-img-img").dataset.fancybox = item.id;
             cloneProductsTemplate.querySelector(".products__item-box-img-img02").dataset.fancybox = item.id;
             cloneProductsTemplate.querySelector(".products__item-box-img-img03").dataset.fancybox = item.id;
             cloneProductsTemplate.querySelector(".products__item-box-ig-zoom-btn").setAttribute("data-fancybox-trigger", item.id);
 
-            cloneProductsTemplate.querySelector(".products__item-box-img-img02").src = `http://localhost:1212/products/${img01}`;
-            cloneProductsTemplate.querySelector(".products__item-box-img-img03").src = `http://localhost:1212/products/${img02}`;
+            cloneProductsTemplate.querySelector(".products__item-box-img-img02").src = `https://matras-store.onrender.com/products/${img01}`;
+            cloneProductsTemplate.querySelector(".products__item-box-img-img03").src = `https://matras-store.onrender.com/products/${img02}`;
             cloneProductsTemplate.querySelector(".products__item-content-info-box-price").textContent = item.cost;
             elFragment.appendChild(cloneProductsTemplate);
         })
@@ -434,7 +434,7 @@ elModalFormPost.addEventListener("submit", (evt) => {
 
 async function userOrderPost(obj) {
     try {
-        const res = await fetch("http://localhost:1212/api/orders", {
+        const res = await fetch("https://matras-store.onrender.com/api/orders", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -462,7 +462,7 @@ async function userOrderPost(obj) {
 // production GET
 async function getProduction() {
     try {
-        const res = await fetch('http://localhost:1212/api/technology')
+        const res = await fetch('https://matras-store.onrender.com/api/technology')
         const data = await res.json()
         console.log(data);
         productionGetFunc(data)
@@ -555,7 +555,7 @@ function productionGetFunc(item) {
 // production GET
 async function getAddress() {
     try {
-        const res = await fetch('http://localhost:1212/api/address')
+        const res = await fetch('https://matras-store.onrender.com/api/address')
         const data = await res.json()
         console.log(data);
         addressGetFunc(data)
@@ -578,9 +578,9 @@ function addressGetFunc(item) {
         const img01 = el.images.replaceAll("[", "").replaceAll("]", "").replaceAll('"', "").split(",")[0];
         const img02 = el.images.replaceAll("[", "").replaceAll("]", "").replaceAll('"', "").split(",")[1];
         const img03 = el.images.replaceAll("[", "").replaceAll("]", "").replaceAll('"', "").split(",")[2];
-        cloneAddressTemplate.querySelector(".address__item-item-img01").src = `http://localhost:1212/address/${img01}`;
-        cloneAddressTemplate.querySelector(".address__item-item-img02").src = `http://localhost:1212/address/${img02}`;
-        cloneAddressTemplate.querySelector(".address__item-item-img03").src = `http://localhost:1212/address/${img03}`;
+        cloneAddressTemplate.querySelector(".address__item-item-img01").src = `https://matras-store.onrender.com/address/${img01}`;
+        cloneAddressTemplate.querySelector(".address__item-item-img02").src = `https://matras-store.onrender.com/address/${img02}`;
+        cloneAddressTemplate.querySelector(".address__item-item-img03").src = `https://matras-store.onrender.com/address/${img03}`;
         elFragment.appendChild(cloneAddressTemplate)
     })
     elAddressList.appendChild(elFragment)
